@@ -4,23 +4,29 @@
 #include <iostream>
 using namespace std;
 
-// define (opsional)
-#define first(L) (L).first
+// define
+#define NIL NULL
 #define next(P) (P)->next
 #define nextP(P) (P)->nextP
 #define nextB(P) (P)->nextB
+#define prevB(P) (P)->prevB
 #define info(P) (P)->info
+#define first(L) (L).first
+#define last(L) (L).last
 #define child(P) (P)->child
 #define keBarang(P) (P)->keBarang
-#define NIL NULL
+
+// single_linked_list parent = pembeli
+// double_linked_list child  = barang
 
 // isi list
-typedef struct pembeli {
+struct pembeli {
   int IDP, saldo;
-  string toko, nama;
+  string nama;
 };
+
 struct barang {
-  int IDB, harga, stok;
+  int IDB, harga, stok, stokOri;
   string barang;
 };
 
@@ -32,10 +38,6 @@ typedef struct elmBarang *adr_Barang;
 typedef struct elmRelasi *adr_Relasi;
 
 // element untuk list
-struct elmRelasi {
-  adr_Relasi next;
-  adr_Barang keBarang;
-};
 struct elmPembeli {
   infotypePembeli info;
   adr_Pembeli nextP;
@@ -44,6 +46,11 @@ struct elmPembeli {
 struct elmBarang {
   infotypeBarang info;
   adr_Barang nextB;
+  adr_Barang prevB;
+};
+struct elmRelasi {
+  adr_Relasi next;
+  adr_Barang keBarang;
 };
 
 // list
@@ -52,26 +59,33 @@ struct listPembeli {
 };
 struct listBarang {
   adr_Barang first;
+  adr_Barang last;
 };
 
 // function & procedure
-void createListPembeli(listPembeli &P);
-void createListBarang(listBarang &B);
+void createListPembeli(listPembeli &LP);
+void createListBarang(listBarang &LB);
 adr_Pembeli createElmPembeli(infotypePembeli x);
 adr_Barang createElmBarang(infotypeBarang x);
-void insertFirstPembeli(listPembeli &L, adr_Pembeli P);
-void insertFirstBarang(listBarang &L, adr_Barang B);
-void connectPembeliToBarang(adr_Pembeli P, adr_Barang B);
-void deletePembeli(listPembeli &L, int IDP);
-void deleteBarang(listBarang &L, int IDB);
+void insertFirstPembeli(listPembeli &LP, adr_Pembeli AP);
+void insertLastBarang(listBarang &LB, adr_Barang AB);
+void connectPembeliToBarang(adr_Pembeli AP, adr_Barang AB, int stok);
+void deletePembeli(listPembeli &LP, int IDP);
+void deleteBarang(listBarang &LB, int IDB);
+void deleteChild(listPembeli &LP, listBarang &LB, int IDP, int IDB);
 void deleteRelasi(listPembeli &L, int IDP);
-void printAllData(listPembeli L);
-void printPembeliData(adr_Pembeli P);
+void printDataPembeli(listPembeli LP);
+void printDataBarang(listBarang LB);
+void printParentChild(listPembeli LP);
+void printPembeliData(listPembeli LP, adr_Pembeli P);
+void printPembeliBarangT(listPembeli P, listBarang B, int inB);
+void printBarangData(listBarang LB, adr_Barang B);
 void printBarangDibeli(adr_Pembeli P);
-void printDataBarangDikitBanyak(listPembeli L);
+void printDataBarangDibeli(int IDP, listPembeli LP, listBarang LB);
+void printPopularBarang(listPembeli L);
+void printUnpopularBarang(listPembeli L);
 adr_Pembeli searchPembeli(listPembeli L, int IDP);
 adr_Barang searchBarang(listBarang L, int IDB);
 int countChild(adr_Pembeli P);
-int menu();
 
 #endif // DB_H_INCLUDED
