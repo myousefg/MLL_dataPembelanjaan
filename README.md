@@ -46,23 +46,23 @@ List Menu :
  0.  Exit
 
 Testing kode   : 
-5  - 1. 
-   - 2. 
-10 - 3.
-15 - 4. 
-   - 5. 
-15 - 6
-5  - 7. 
-5  - 8.
-10 - 9. 
-   - 10.
-5  - 11. 
-15 - 12. 
-   - 13.
-   - 14.
-   - 15. (Error/no if statement untuk data barang)
-5  - 16.
-10 - Main program
+5  -1. 
+   -2. 
+10 -3.
+15 -4. 
+   -5. 
+15 -6.
+5  -7. 
+5  -8.
+10 -9. 
+   -10.
+5  -11. 
+15 -12. 
+   -13.
+   -14.
+   -15. (Error/no if statement untuk data barang)
+5  -16.
+10 -Main program
 
 Input untuk Data Pembelanjaan :
 1
