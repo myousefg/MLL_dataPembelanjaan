@@ -1,5 +1,7 @@
-Topic : Data pembelanjaan
-Description : implementasikan multi linked-list yang memodelkan data pembeli dan data barang yang dibelinya di suatu toko. Seorang pembeli bisa membeli banyak barang tertentu selama total harga barang yang dibeli tidak melebihi saldo yang dimilikinya. Sedangkan suatu barang bisa dibeli oleh siapapun, selama persedian barang tersebut masih ada.
+Topic : Data pembelanjaan (MLL dan DLL pada c++)
+Description : implementasikan multi linked-list yang memodelkan data pembeli dan data barang yang dibelinya di suatu toko. 
+Seorang pembeli bisa membeli banyak barang tertentu selama total harga barang yang dibeli tidak melebihi saldo yang dimilikinya. 
+Sedangkan suatu barang bisa dibeli oleh siapapun, selama persedian barang tersebut masih ada.
 
 Fungsionalitas :
 a. Penambahan data pembeli.
@@ -45,6 +47,6 @@ List Menu :
  16. Menghitung jumlah barang pada Keranjang Pembeli
  0.  Exit
 
-Feedback :
+Feedback dari asprak :
 - List data pembeli dibuat array, biar pas barang dihapus masih ada di list pembeli
-- 15. (Error/no if statement untuk data barang)
+- No.15 Error/no if statement untuk data barang
